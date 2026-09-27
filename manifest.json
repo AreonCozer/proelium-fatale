@@ -3,7 +3,7 @@
   "version": "1.0.5",
   "manifest_version": 1,
   "description": "GM bir tusa bastiginda tum oyunculara tam ekran cutscene oynatir.",
-  "author": "",
+  "author": "Areon_Official",
   "icon": "/icon.svg",
   "background_url": "/background.html",
   "action": {
