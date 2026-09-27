@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "manifest_version": 1,
   "description": "GM bir tusa bastiginda tum oyunculara tam ekran cutscene oynatir.",
-  "author": "",
+  "author": "Areon_Official",
   "icon": "https://areoncozer.github.io/proelium-fatale/icon.svg?v=2",
   "background_url": "https://areoncozer.github.io/proelium-fatale/background.html?v=2",
   "action": {
