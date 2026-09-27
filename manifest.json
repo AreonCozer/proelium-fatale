@@ -4,12 +4,12 @@
   "manifest_version": 1,
   "description": "GM bir tusa bastiginda tum oyunculara tam ekran cutscene oynatir.",
   "author": "Areon_Official",
-  "icon": "/icon.svg",
-  "background_url": "/background.html",
+  "icon": "icon.svg",
+  "background_url": "background.html",
   "action": {
     "title": "Cutscene Oynat",
-    "icon": "/icon.svg",
-    "popover": "/action.html",
+    "icon": "icon.svg",
+    "popover": "action.html",
     "width": 260,
     "height": 150
   },
