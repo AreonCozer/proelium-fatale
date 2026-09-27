@@ -1,0 +1,22 @@
+{
+  "name": "Proelium Fatale Cutscene",
+  "version": "1.0.0",
+  "manifest_version": 1,
+  "description": "GM bir tusa bastiginda tum oyunculara tam ekran cutscene oynatir.",
+  "author": "",
+  "icon": "/icon.svg",
+  "background_url": "/background.html",
+  "action": {
+    "title": "Cutscene Oynat",
+    "icon": "/icon.svg",
+    "popover": "/action.html",
+    "width": 260,
+    "height": 150
+  },
+  "permissions": [
+    {
+      "name": "autoplay",
+      "reason": "Cutscene videosunun sesli ve otomatik baslamasi icin gerekli"
+    }
+  ]
+}

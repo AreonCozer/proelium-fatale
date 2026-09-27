@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cutscene</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 900ms ease;
+    }
+    video.show { opacity: 1; }
+    video.hide { opacity: 0; }
+  </style>
+</head>
+<body>
+  <!--
+    cutscene.mp4 dosyasini bu klasore (public/) kendin eklemelisin.
+    Dosya adini degistirdiysen asagidaki src'yi de guncelle.
+  -->
+  <video id="cutscene" src="/cutscene.mp4" autoplay playsinline></video>
+
+  <script type="module">
+    import OBR from "https://esm.sh/@owlbear-rodeo/sdk@2";
+
+    const MODAL_ID = "com.proeliumfatale.cutscene/modal";
+    const video = document.getElementById("cutscene");
+    let closing = false;
+
+    requestAnimationFrame(() => video.classList.add("show"));
+
+    function closeWithFade() {
+      if (closing) return;
+      closing = true;
+      video.classList.remove("show");
+      video.classList.add("hide");
+      setTimeout(() => {
+        OBR.onReady(() => OBR.modal.close(MODAL_ID));
+      }, 900);
+    }
+
+    video.addEventListener("ended", closeWithFade);
+    video.addEventListener("error", () => {
+      console.error(
+        "Cutscene videosu yuklenemedi. /cutscene.mp4 dosyasinin public klasorunde oldugundan emin ol."
+      );
+      closeWithFade();
+    });
+
+    // Guvenlik agi: video herhangi bir sebeple oynamazsa
+    // 15 saniye sonra otomatik kapat.
+    setTimeout(closeWithFade, 15000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cutscene Background</title>
+</head>
+<body>
+  <script type="module">
+    import OBR from "https://esm.sh/@owlbear-rodeo/sdk@2";
+
+    const CHANNEL = "com.proeliumfatale.cutscene/play";
+    const MODAL_ID = "com.proeliumfatale.cutscene/modal";
+
+    OBR.onReady(() => {
+      // Bu sayfa her oyuncunun tarayicisinda gorunmeden calisir.
+      // GM "Cutscene Oynat" tusuna bastiginda buraya mesaj duser
+      // ve o oyuncunun ekraninda tam ekran video modali acilir.
+      OBR.broadcast.onMessage(CHANNEL, () => {
+        OBR.modal.open({
+          id: MODAL_ID,
+          url: "/video.html",
+          fullScreen: true,
+          hideBackdrop: true,
+          hidePaper: true,
+        });
+      });
+    });
+  </script>
+</body>
+</html>
