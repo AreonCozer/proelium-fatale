@@ -1,15 +1,15 @@
 {
   "name": "Proelium Fatale Cutscene",
-  "version": "1.0.7",
+  "version": "1.0.0",
   "manifest_version": 1,
   "description": "GM bir tusa bastiginda tum oyunculara tam ekran cutscene oynatir.",
-  "author": "Areon_Official",
-  "icon": "https://areoncozer.github.io/proelium-fatale/icon.svg",
-  "background_url": "https://areoncozer.github.io/proelium-fatale/background.html",
+  "author": "",
+  "icon": "https://areoncozer.github.io/proelium-fatale/icon.svg?v=2",
+  "background_url": "https://areoncozer.github.io/proelium-fatale/background.html?v=2",
   "action": {
     "title": "Cutscene Oynat",
-    "icon": "https://areoncozer.github.io/proelium-fatale/icon.svg",
-    "popover": "https://areoncozer.github.io/proelium-fatale/action.html",
+    "icon": "https://areoncozer.github.io/proelium-fatale/icon.svg?v=2",
+    "popover": "https://areoncozer.github.io/proelium-fatale/action.html?v=2",
     "width": 260,
     "height": 150
   },
