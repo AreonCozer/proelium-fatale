@@ -25,10 +25,10 @@
 </head>
 <body>
   <!--
-    cutscene.mp4 dosyasini bu klasore (public/) kendin eklemelisin.
+    cutscene.mp4 dosyasini manifest.json ile AYNI klasore eklemelisin.
     Dosya adini degistirdiysen asagidaki src'yi de guncelle.
   -->
-  <video id="cutscene" src="/cutscene.mp4" autoplay playsinline></video>
+  <video id="cutscene" src="cutscene.mp4" autoplay muted playsinline></video>
 
   <script type="module">
     import OBR from "https://esm.sh/@owlbear-rodeo/sdk@2";
@@ -38,6 +38,17 @@
     let closing = false;
 
     requestAnimationFrame(() => video.classList.add("show"));
+
+    // Tarayicilar kullanici etkilesimi olmadan SESLI otomatik oynatmayi
+    // engelleyebiliyor. Bu yuzden once sessiz baslatip, oynama
+    // basladiktan hemen sonra sesi aciyoruz - bu her tarayicida calisir.
+    video.play().then(() => {
+      setTimeout(() => {
+        video.muted = false;
+      }, 50);
+    }).catch((err) => {
+      console.error("Video oynatilamadi:", err);
+    });
 
     function closeWithFade() {
       if (closing) return;
